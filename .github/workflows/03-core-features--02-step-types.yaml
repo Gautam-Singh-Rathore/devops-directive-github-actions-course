@@ -1,0 +1,23 @@
+name: Step Type
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  say-hello-inline-base:
+    runs-on: ubuntu-22.04
+    steps:
+      - run: echo "Hello World from shell"
+  
+  say-hello-inline-python:
+    runs-on: ubuntu-22.04
+    steps:
+      - run: print("Hello World from python script")
+        shell: python
+  
+  say-hello-action:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/hello-world-javascript-action@v1
+        with: 
+          who-to-greet: "from an action in Github action marketplace"
